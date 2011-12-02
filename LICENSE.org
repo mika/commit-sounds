@@ -12,4 +12,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ** License for sounds/
 
-Uncertain, sadly.
+Uncertain for most, sadly.
+
+** License for
+
+*** flush.wav - CC-by 
+  by    http://www.freesound.org/people/massenbachhausen/
+  from  http://www.freesound.org/people/massenbachhausen/sounds/135726/
+
+*** getting_started.wav - CC-0
+  from  http://www.freesound.org/people/ecfike/sounds/135807/
+
+
+CC-0:   http://creativecommons.org/publicdomain/zero/1.0/
+CC-by:  http://creativecommons.org/licenses/by/3.0/
+
