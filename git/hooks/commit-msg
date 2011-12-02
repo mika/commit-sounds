@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# config needs to set $SOUNDDIR
+if [ -r "${HOME}/.config/commit-sounds/defaults" ] ; then
+  . "${HOME}/.config/commit-sounds/defaults"
+fi
+
+if [ -z "${SOUNDDIR}" ] ; then
+  echo "NOTE: .git/hooks/commit-msg is inactive, since SOUNDDIR is unset."
+  echo "NOTE: To activate commit-sounds edit ${HOME}/.config/commit-sounds/defaults"
+  exit 0
+fi
+
+[ -n "$PLAYER" ] || PLAYER=mplayer
+
+play() {
+  # if it's not readable just return without annoying the user
+  [ -r "${SOUNDDIR}/${1}" ] || return 0
+
+  exec "${PLAYER}" "${SOUNDDIR}/${1}" >/dev/null 2>&1 &
+}
+
+cat "$1" |&
+while read -r line; do
+  case "$line" in
+    (*[Cc]loses*|*[Ff]ix*|*[Rr]emove*|*[Ff]inish*)
+      play killingspree.mp3
+      ;;
+    (*[Tt]est*)
+      play first_blood.mp3
+      ;;
+    (*[Ii]mprove*)
+      play dominating.mp3
+      ;;
+    (*[Rr]elease*)
+      play unstoppable.mp3
+      ;;
+    (*[Mm]eh*)
+      play nelson_haha.mp3
+      ;;
+    (*[Ff]sck*|*[Ff]uck*|*[Cc]razy*)
+      play berserk.mp3
+      ;;
+  esac
+done

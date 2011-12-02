@@ -1,0 +1,61 @@
+* Project Idea
+
+[[http://programming-motherfucker.com/][Programming is fun]], except for when it isn't.
+Install commit-sounds to at least make committing in Git more fun.
+
+* System requirements
+
++ git
++ mplayer
+
+* Usage instructions
+
+Check out this repository:
+
+   : BASEPATH=$(pwd)
+   : git clone git://github.com/mika/commit-sounds.git
+
+Create configuration file with SOUNDDIR pointing to the directory including the sound files:
+
+   : mkdir -p ${HOME}/.config/commit-sounds/
+   : echo "SOUNDDIR=\"${BASEPATH}/commit-sounds/sounds/\"" >> ${HOME}/.config/commit-sounds/defaults
+
+Create a test repository for playing around:
+
+   : git init /tmp/playground
+
+Install the commit hook in the git repository:
+
+   : cp commit-sounds/git/hooks/commit-msg /tmp/playground/.git/hooks/
+
+Test hook, like:
+
+   : cd /tmp/playground
+   : echo test > TODO
+   : git add TODO ; git commit -m 'add test to TODO file'
+
+Or like:
+
+   : echo fork > TODO
+   : git commit -a -m 'improve and fork it!'
+
+Fun? Install and use with a real™ repository.
+
+
+* Copyright notice regarding the sound files
+
+The sound files have been extracted from [[http://www.youtube.com/watch?v=0QvP9LhYUOI][Unreal Tournament III Announcer Sounds]].
+
+Copyright situation sadly is unclear, if you're aware of any details please report to the author.
+
+
+* Feedback
+
+If you're aware of any free distributable sound files that would fit its purpose and could be shipped as part of commit-sounds please report to the author.
+
+Fork this project and file a pull request for your own keywords, further commit hooks,... I can't await to "Test" it.
+
+
+* Author
+
+Michael Prokop <commit-sounds@michael-prokop.at>, [[https://twitter.com/mikagrml][@mikagrml]]
