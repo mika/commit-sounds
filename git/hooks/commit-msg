@@ -26,6 +26,9 @@ while read -r line; do
     (*[Cc]loses*|*[Ff]ix*|*[Rr]emove*|*[Ff]inish*)
       play killingspree.mp3
       ;;
+    (*[Ff]lush*)
+      play flush.mp3
+      ;;
     (*[Tt]est*)
       play first_blood.mp3
       ;;
@@ -40,6 +43,9 @@ while read -r line; do
       ;;
     (*[Ff]sck*|*[Ff]uck*|*[Cc]razy*)
       play berserk.mp3
+      ;;
+    (*[Ii]nit*)
+      play getting_started.mp3
       ;;
   esac
 done
