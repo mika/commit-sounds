@@ -17,8 +17,8 @@ Check out this repository:
 
 Create configuration file with SOUNDDIR pointing to the directory including the sound files:
 
-   : mkdir -p ${HOME}/.config/commit-sounds/
-   : echo "SOUNDDIR=\"${BASEPATH}/commit-sounds/sounds/\"" >> ${HOME}/.config/commit-sounds/defaults
+   : mkdir -p ${XDG_CONFIG_HOME:-${HOME}/.config}/commit-sounds/
+   : echo "SOUNDDIR=\"${BASEPATH}/commit-sounds/sounds/\"" >> ${XDG_CONFIG_HOME:-${HOME}/.config}/commit-sounds/defaults
 
 Create a test repository for playing around:
 
