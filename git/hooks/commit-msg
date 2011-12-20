@@ -1,13 +1,15 @@
 #!/bin/bash
 
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
+
 # config needs to set $SOUNDDIR
-if [ -r "${HOME}/.config/commit-sounds/defaults" ] ; then
-  . "${HOME}/.config/commit-sounds/defaults"
+if [ -r "${XDG_CONFIG_HOME}/commit-sounds/defaults" ] ; then
+  . "${XDG_CONFIG_HOME}/commit-sounds/defaults"
 fi
 
 if [ -z "${SOUNDDIR}" ] ; then
   echo "NOTE: .git/hooks/commit-msg is inactive, since SOUNDDIR is unset."
-  echo "NOTE: To activate commit-sounds edit ${HOME}/.config/commit-sounds/defaults"
+  echo "NOTE: To activate commit-sounds edit ${XDG_CONFIG_HOME}/commit-sounds/defaults"
   exit 0
 fi
 
