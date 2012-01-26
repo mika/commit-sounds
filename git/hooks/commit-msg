@@ -43,7 +43,7 @@ while read -r line; do
     (*[Mm]eh*)
       play nelson_haha.mp3
       ;;
-    (*[Ff]sck*|*[Ff]uck*|*[Cc]razy*)
+    (*[Ff]sck*|*[Ff]uck*|*[Cc]razy*|*[Pp]hew*)
       play berserk.mp3
       ;;
     (*[Ii]nit*)
